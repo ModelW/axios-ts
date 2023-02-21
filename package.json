@@ -1,8 +1,8 @@
 {
-    "name": "axios-proxy-wagtail-nuxt3",
+    "name": "axios-js",
     "private": false,
     "description": "An axios plug-in that enables Vue3/Nuxt3 and Wagtail work together.",
-    "version": "1.0.0",
+    "version": "0.6.0",
     "author": "Rémy Sanchez (@xowap)",
     "license": "WTFPL",
     "repository": "https://github.com/ModelW/",
