@@ -85,7 +85,7 @@ function isAxiosMethod<R, D>(
 
 // @ts-ignore
 
-export default defineNuxtPlugin(() => {
+export default axios_plugin(() => {
     const config = useRuntimeConfig();
     const normalAxios = axios.create({
         baseURL: config.apiURL ?? config.public.baseURL,

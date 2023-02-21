@@ -12,6 +12,17 @@ npm install proxy
 ```
 This is going to add the plug-in to your `package.json`.
 
+## Setup
+To enable the plug-in to work properly with Nuxt3 you have to import it inside
+you plugins directory in a file with the name `axios.ts`.
+
+This is the code fragment necessary to allow to work the plugin:
+```typescript
+import axios_plugin from "axios";
+
+export default defineNuxtPlugin(axios_plugin)
+```
+
 To use this plug-in you have to add it to the configuration of nuxt at 'nuxt.config.ts'
 ```javascript
     plugins: ["~/plugins/axios"]
