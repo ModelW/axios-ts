@@ -8,7 +8,7 @@ and render correctly the Vue3 components inside the website and the preview.
 To install these plug-in you have to with following command:
 
 ```bash
-npm install proxy
+npm install @model-w/axios
 ```
 This is going to add the plug-in to your `package.json`.
 
@@ -27,3 +27,5 @@ To use this plug-in you have to add it to the configuration of nuxt at 'nuxt.con
 ```javascript
     plugins: ["~/plugins/axios"]
 ```
+
+With these finished the axios_plugin should start to work
