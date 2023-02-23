@@ -1,29 +1,46 @@
 {
-    "name": "axios-js",
-    "private": false,
-    "description": "An axios plug-in that enables Vue3/Nuxt3 and Wagtail work together.",
-    "version": "0.6.0",
-    "author": "Rémy Sanchez (@xowap)",
-    "license": "WTFPL",
-    "repository": "https://github.com/ModelW/",
-    "engines": {
-        "node": ">= 16.0.0"
-    },
-    "main": "axios.ts",
-    "dependencies": {
-        "@vueuse/core": "~9.11.1",
-        "axios": "~1.3.3",
-        "core-js": "~3.28.0",
-        "nuxt": "~3.2.2",
-        "nuxt-runtime-compiler": "~1.2.2",
-        "vue": "~3.2.47"
-    },
-    "devDependencies": {
-        "@types/axios": "~0.14.0",
-        "prettier": "^2.0.5"
-    },
-    "contributors": [
-        "Laurent Treguier",
-        "Iván Lorenzo"
-    ]
+  "name": "@model-w/axios",
+  "private": false,
+  "description": "An axios plug-in that enables Vue3/Nuxt3 and Wagtail work together.",
+  "version": "0.1.0",
+  "author": "Rémy Sanchez (@xowap)",
+  "license": "WTFPL",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ModelW/axios-ts.git"
+  },
+  "engines": {
+    "node": ">= 16.0.0"
+  },
+  "main": "axios.ts",
+  "dependencies": {
+    "@vueuse/core": "~9.11.1",
+    "axios": "~1.3.3",
+    "core-js": "~3.28.0",
+    "nuxt": "~3.2.2",
+    "nuxt-runtime-compiler": "~1.2.2",
+    "vue": "~3.2.47"
+  },
+  "devDependencies": {
+    "@types/axios": "~0.14.0",
+    "prettier": "^2.0.5"
+  },
+  "contributors": [
+    "Laurent Treguier",
+    "Ivan Lorenzo"
+  ],
+  "bugs": {
+    "url": "https://github.com/ModelW/axios-ts/issues"
+  },
+  "homepage": "https://github.com/ModelW/axios-ts#readme",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "axios",
+    "nuxt3",
+    "wagtail",
+    "model-w",
+    "modelw"
+  ]
 }
