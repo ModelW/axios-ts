@@ -1,4 +1,4 @@
-import axios, { AxiosRequestConfig, AxiosResponse, AxiosStatic } from "axios";
+import axios, {AxiosRequestConfig, AxiosResponse, AxiosStatic} from "axios";
 
 interface SuperAxiosStatic extends AxiosStatic {
 
@@ -13,43 +13,52 @@ interface SuperAxiosStatic extends AxiosStatic {
         url: string,
         config?: AxiosRequestConfig<D>
     ): Promise<R>;
+
     $get<R = any, D = any>(
         url: string,
         config?: AxiosRequestConfig<D>
     ): Promise<R>;
+
     $head<R = any, D = any>(
         url: string,
         config?: AxiosRequestConfig<D>
     ): Promise<R>;
+
     $options<R = any, D = any>(
         url: string,
         config?: AxiosRequestConfig<D>
     ): Promise<R>;
+
     $patch<R = any, D = any>(
         url: string,
         data?: D,
         config?: AxiosRequestConfig<D>
     ): Promise<R>;
+
     $patchForm<R = any, D = any>(
         url: string,
         data?: D,
         config?: AxiosRequestConfig<D>
     ): Promise<R>;
+
     $post<R = any, D = any>(
         url: string,
         data?: D,
         config?: AxiosRequestConfig<D>
     ): Promise<R>;
+
     $postForm<R = any, D = any>(
         url: string,
         data?: D,
         config?: AxiosRequestConfig<D>
     ): Promise<R>;
+
     $put<R = any, D = any>(
         url: string,
         data?: D,
         config?: AxiosRequestConfig<D>
     ): Promise<R>;
+
     $putForm<R = any, D = any>(
         url: string,
         data?: D,
@@ -83,10 +92,7 @@ function isAxiosMethod<R, D>(
     return typeof prop === "function" && axiosMethodNames.includes(name);
 }
 
-// @ts-ignore
-
-export default axios_plugin(() => {
-    const config = useRuntimeConfig();
+function superAxiosInstance(config: any) {
     const normalAxios = axios.create({
         baseURL: config.apiURL ?? config.public.baseURL,
         withCredentials: true,
@@ -120,11 +126,9 @@ export default axios_plugin(() => {
                 return axiosResponse.data;
             }.bind(target);
         },
-    });
+        }
+    );
+    return superAxios as SuperAxiosStatic;
+}
 
-    return {
-        provide: {
-            axios: superAxios as SuperAxiosStatic,
-        },
-    };
-});
+export default superAxiosInstance;
