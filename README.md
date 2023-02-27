@@ -18,9 +18,18 @@ you plugins directory in a file with the name `axios.ts`.
 
 This is the code fragment necessary to allow to work the plugin:
 ```typescript
-import axios_plugin from "axios";
+import superAxiosInstance from "@model-w/axios";
 
-export default defineNuxtPlugin(axios_plugin)
+export default defineNuxtPlugin(() => {
+    const config = useRuntimeConfig();
+    const superAxios = superAxiosInstance(config);
+    return {
+        provide: {
+            axios: superAxios,
+        },
+    };
+});
+
 ```
 
 To use this plug-in you have to add it to the configuration of nuxt at 'nuxt.config.ts'
