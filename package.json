@@ -1,10 +1,17 @@
 {
-  "name": "my-module",
-  "version": "1.0.0",
-  "description": "My new Nuxt module",
-  "repository": "your-org/my-module",
-  "license": "MIT",
+  "name": "@model-w/axios",
+  "description": "An axios plug-in that enables Vue3/Nuxt3 and Wagtail work together.",
+  "version": "0.2.2",
+  "author": "Rémy Sanchez (@xowap)",
+  "license": "WTFPL",
   "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ModelW/axios-ts.git"
+  },
+  "engines": {
+    "node": ">= 16.0.0"
+  },
   "exports": {
     ".": {
       "types": "./dist/types.d.ts",
@@ -12,20 +19,21 @@
       "require": "./dist/module.cjs"
     }
   },
+  "homepage": "https://github.com/ModelW/axios-ts#readme",
+  "contributors": [
+    "Laurent Treguier",
+    "Ivan Lorenzo"
+  ],
+  "bugs": {
+    "url": "https://github.com/ModelW/axios-ts/issues"
+  },
   "main": "./dist/module.cjs",
   "types": "./dist/types.d.ts",
   "files": [
     "dist"
   ],
   "scripts": {
-    "prepack": "nuxt-module-build",
-    "dev": "nuxi dev playground",
-    "dev:build": "nuxi build playground",
-    "dev:prepare": "nuxt-module-build --stub && nuxi prepare playground",
-    "release": "npm run lint && npm run test && npm run prepack && changelogen --release && npm publish && git push --follow-tags",
-    "lint": "eslint .",
-    "test": "vitest run",
-    "test:watch": "vitest watch"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
     "@nuxt/kit": "^3.3.1",
@@ -40,5 +48,12 @@
     "eslint": "^8.36.0",
     "nuxt": "^3.3.1",
     "vitest": "^0.29.3"
-  }
+  },
+  "keywords": [
+    "axios",
+    "nuxt3",
+    "wagtail",
+    "model-w",
+    "modelw"
+  ]
 }
