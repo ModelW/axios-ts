@@ -5,7 +5,7 @@ export interface ModuleOptions {}
 
 export default defineNuxtModule<ModuleOptions>({
   meta: {
-    name: 'axios',
+    name: '@model-w/axios',
     configKey: 'axios'
   },
   // Default configuration options of the Nuxt module

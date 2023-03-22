@@ -1,7 +1,7 @@
 {
   "name": "@model-w/axios",
   "description": "An axios plug-in that enables Vue3/Nuxt3 and Wagtail work together.",
-  "version": "0.2.5",
+  "version": "0.2.6",
   "author": "Rémy Sanchez (@xowap)",
   "license": "WTFPL",
   "type": "module",
@@ -30,7 +30,14 @@
   "main": "./dist/module.cjs",
   "types": "./dist/types.d.ts",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "prepack": "nuxt-module-build",
+    "dev": "nuxi dev playground",
+    "dev:build": "nuxi build playground",
+    "dev:prepare": "nuxt-module-build --stub && nuxi prepare playground",
+    "release": "npm run lint && npm run test && npm run prepack && changelogen --release && npm publish && git push --follow-tags",
+    "lint": "eslint .",
+    "test": "vitest run",
+    "test:watch": "vitest watch"
   },
   "dependencies": {
     "@nuxt/kit": "^3.3.1",
@@ -52,5 +59,8 @@
     "wagtail",
     "model-w",
     "modelw"
+  ],
+  "files": [
+    "./dist"
   ]
 }
