@@ -12,8 +12,7 @@ npm install @model-w/axios
 ```
 This is going to add the plug-in to your `package.json`.
 
+To use this module we need to add it to necessary to add it inside `nuxt.config.ts` as it's described above:
 ```javascript
-    plugins: ["~/plugins/axios"]
+    modules: ["~/plugins/axios"]
 ```
-
-With these finished the axios_plugin should start to work
