@@ -1,19 +1,19 @@
-import { defineNuxtModule, addPlugin, createResolver } from '@nuxt/kit'
+import { defineNuxtModule, addPlugin, createResolver } from "@nuxt/kit";
 
 // Module options TypeScript interface definition
 export interface ModuleOptions {}
 
 export default defineNuxtModule<ModuleOptions>({
   meta: {
-    name: '@model-w/axios',
-    configKey: 'axios'
+    name: "@model-w/axios",
+    configKey: "axios",
   },
   // Default configuration options of the Nuxt module
   defaults: {},
-  setup (options, nuxt) {
-    const resolver = createResolver(import.meta.url)
+  setup() {
+    const resolver = createResolver(import.meta.url);
 
     // Do not add the extension since the `.ts` will be transpiled to `.mjs` after `npm run prepack`
-    addPlugin(resolver.resolve('./runtime/plugin'))
-  }
-})
+    addPlugin(resolver.resolve("./runtime/plugin"));
+  },
+});
