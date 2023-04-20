@@ -95,7 +95,7 @@ function isAxiosMethod<R, D>(
 
 function superAxiosInstance(config: any) {
   const normalAxios = axios.create({
-    baseURL: config.apiURL ?? config.public.baseURL,
+    baseURL: config.apiUrl ?? config.public.baseUrl,
     withCredentials: true,
     xsrfCookieName: "csrftoken",
     xsrfHeaderName: "x-csrf-token",

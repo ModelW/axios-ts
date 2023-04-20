@@ -9,11 +9,11 @@
 </template>
 
 <script lang="ts">
-  import {defineNuxtComponent} from "#app";
-
+  import {defineNuxtComponent, useRuntimeConfig} from "#app";
   export default defineNuxtComponent({
     async asyncData({ $axios }) {
-      const url = '/ModelW/.github/main/profile/README.md'
+      const config = useRuntimeConfig();
+      const url = [config.apiUrl, '/ModelW/.github/main/profile/README.md'].join("")
       const readme = await $axios.$get(url)
       return { readme, url }
     },
