@@ -104,11 +104,10 @@ The way to call this method from the components is:
         const url = config.apiUrl
         const configParams = {
             params: {
-                product: "potatoes", 
                 id:17
             }
         }
-        const response = await $axios.$patch(url, configParams)
+        const response = await $axios.$delete(url, configParams)
         return response
     };
 ```
