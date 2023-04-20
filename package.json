@@ -1,7 +1,7 @@
 {
   "name": "@model-w/axios",
   "description": "An axios plug-in that enables Vue3/Nuxt3 and Wagtail work together.",
-  "version": "0.4.3",
+  "version": "0.4.4",
   "author": "Rémy Sanchez (@xowap)",
   "license": "WTFPL",
   "type": "module",
@@ -19,7 +19,7 @@
       "require": "./dist/module.cjs"
     }
   },
-  "homepage": "https://github.com/ModelW/axios-ts#readme",
+  "homepage": "https://model-w-axios.readthedocs.io/en/latest/",
   "contributors": [
     "Laurent Treguier",
     "Ivan Lorenzo"

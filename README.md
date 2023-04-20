@@ -5,4 +5,4 @@ For example are Crud operations.
 
 ## Documentation
 
-[✨ **Documentation is there** ✨](http://modelw-django-preset.rtfd.io/)
+[✨ **Documentation is there** ✨](https://model-w-axios.readthedocs.io/en/latest/)
