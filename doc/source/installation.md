@@ -1,11 +1,12 @@
 # Installation
 
-In order to install the Model W Axios, you need to add it to the `package.json`, for example `"@model-w/axios": "~0.4.3"`, or use the next command 
-```commandline
+You can install Model W Proxy in your project with the following command.
+
+```shell
 npm install @model-w/axios
 ```
 
-Then you can use it in your project modifying the `nuxt.config.ts` file. 
+Then, configure the module in the `nuxt.config.ts` file. 
 Here is a minimalistic example:
 
 ```typescript
@@ -23,4 +24,3 @@ export default defineNuxtConfig(
   }
 )
 ```
-When you have added it to this configuration, you are ready to use it.
