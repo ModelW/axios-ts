@@ -1,6 +1,6 @@
 # Installation
 
-You can install Model W Proxy in your project with the following command.
+You can install Model W Axios in your project with the following command.
 
 ```shell
 npm install @model-w/axios
@@ -13,7 +13,7 @@ Here is a minimalistic example:
 export default defineNuxtConfig(
   {
     modules: [
-        "@model-W/proxy"
+        "@model-W/axios"
     ],
     runtimeConfig: {
         apiUrl: process.env.API_URL ? process.env.API_URL : "http://localhost:3000",
