@@ -1,6 +1,6 @@
 # Installation
 
-In order to install the Model W Axios, you need to add it to the `package.json`, for example `"@model-w/axios": "~0.4.3"`, or use the next command 
+You can install Model W Axios in your project with the following command.
 ```commandline
 npm install @model-w/axios
 ```
@@ -11,15 +11,15 @@ Here is a minimalistic example:
 ```typescript
 export default defineNuxtConfig(
   {
+    runtimeConfig: {
+        apiUrl: process.env.API_URL,
+        public: {
+            baseUrl: process.env.BASE_URL
+        }
+    },
     modules: [
         "@model-W/proxy"
     ],
-    runtimeConfig: {
-        apiUrl: process.env.API_URL ? process.env.API_URL : "http://localhost:3000",
-        public: {
-            baseUrl: process.env.BASE_URL ? process.env.BASE_URL : "http://localhost:3000"
-        }
-    }
   }
 )
 ```

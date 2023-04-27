@@ -1,9 +1,9 @@
 export default defineNuxtConfig({
   modules: ['../src/module'],
   runtimeConfig: {
-    apiUrl: process.env.API_URL ? process.env.API_URL : "http://localhost:3000",
+    apiUrl: process.env.API_URL,
     public: {
-      baseUrl: process.env.BASE_URL ? process.env.BASE_URL : ""
+      baseUrl: process.env.BASE_URL
     }
   },
 })
