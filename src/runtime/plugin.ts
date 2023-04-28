@@ -2,7 +2,7 @@ import { defineNuxtPlugin } from "#app";
 import { useRuntimeConfig } from "#imports";
 import axios, { AxiosRequestConfig, AxiosResponse, AxiosStatic } from "axios";
 
-interface SuperAxiosStatic extends AxiosStatic {
+export interface SuperAxiosStatic extends AxiosStatic {
   /**
    * @param url
    * @param config
@@ -140,3 +140,7 @@ export default defineNuxtPlugin(() => {
     },
   };
 });
+
+export interface NuxtApp {
+  $axios: SuperAxiosStatic;
+}
