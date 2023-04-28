@@ -1,17 +1,29 @@
 {
   "name": "@model-w/axios",
-  "description": "An axios plug-in that enables Vue3/Nuxt3 and Wagtail work together.",
   "version": "0.4.4",
-  "author": "Rémy Sanchez (@xowap)",
-  "license": "WTFPL",
   "type": "module",
+  "description": "An axios plug-in that enables Vue3/Nuxt3 and Wagtail work together.",
+  "license": "WTFPL",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ModelW/axios-ts.git"
   },
-  "engines": {
-    "node": ">= 16.0.0"
+  "homepage": "https://model-w-axios.readthedocs.io/en/latest/",
+  "bugs": {
+    "url": "https://github.com/ModelW/axios-ts/issues"
   },
+  "author": "Rémy Sanchez (@xowap)",
+  "contributors": [
+    "Laurent Treguier",
+    "Ivan Lorenzo"
+  ],
+  "keywords": [
+    "axios",
+    "nuxt3",
+    "wagtail",
+    "model-w",
+    "modelw"
+  ],
   "exports": {
     ".": {
       "types": "./dist/types.d.ts",
@@ -19,16 +31,11 @@
       "require": "./dist/module.cjs"
     }
   },
-  "homepage": "https://model-w-axios.readthedocs.io/en/latest/",
-  "contributors": [
-    "Laurent Treguier",
-    "Ivan Lorenzo"
-  ],
-  "bugs": {
-    "url": "https://github.com/ModelW/axios-ts/issues"
-  },
   "main": "./dist/module.cjs",
   "types": "./dist/types.d.ts",
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "prepack": "nuxt-module-build",
     "dev": "nuxi dev playground",
@@ -38,6 +45,9 @@
     "lint": "eslint .",
     "test": "vitest run",
     "test:watch": "vitest watch"
+  },
+  "engines": {
+    "node": ">=16.0.0"
   },
   "dependencies": {
     "@nuxt/kit": "^3.4.2",
@@ -52,15 +62,5 @@
     "eslint": "^8.39.0",
     "nuxt": "^3.4.2",
     "vitest": "^0.30.1"
-  },
-  "keywords": [
-    "axios",
-    "nuxt3",
-    "wagtail",
-    "model-w",
-    "modelw"
-  ],
-  "files": [
-    "./dist"
-  ]
+  }
 }
