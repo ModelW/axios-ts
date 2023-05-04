@@ -1,6 +1,6 @@
 {
   "name": "@model-w/axios",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "type": "module",
   "description": "An axios plug-in that enables Vue3/Nuxt3 and Wagtail work together.",
   "license": "WTFPL",
@@ -61,6 +61,6 @@
     "changelogen": "^0.5.3",
     "eslint": "^8.39.0",
     "nuxt": "^3.4.3",
-    "vitest": "^0.31.0"
+    "vitest": "^0.30.1"
   }
 }
