@@ -2,7 +2,7 @@
 
 Yay you want to contribute! Here are a few rules.
 
-This repository follows the [WITH Madrid](https://code.with-madrid.com/) code 
+This repository follows the [WITH Madrid](https://code.with-madrid.com/) code
 guidelines.
 
 ## Writing documentation

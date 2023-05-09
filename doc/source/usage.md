@@ -1,38 +1,28 @@
 # Usage
+
 This is a little guide to use `@model-w/axios` inside a Nuxt3 component.
-This guide is going to assume that you have followed the guide inside the [installation](installation.md).
+This guide is going to assume that you have followed the guide inside
+the [installation](installation.md).
 
-## Usage in template
-Using in `async` way, we can implement it by using on the `script` side of our `vue` templates.
-Here is an example of a little implementation that works, 
+## As a composable
 
-```vue
-<template>
-  <p>url</p>
-  <pre>data</pre>
-</template>
+The recommended way of using this module is to use the provided composable:
 
-<script lang="ts">
-  export default defineNuxtComponent({
-    async asyncData({ $axios }) {
-      const url = "";
-      const data = await $axios.$get(url);
-      return { data, url };
-    },
-  
-    data() {
-      return {
-        data: "",
-        url: "",
-      };
-    },
-  });
-</script>
+```typescript
+import {useAxios} from "@modelw/axios";
 
-<style lang="css">
-
-</style>
+const $axios = useAxios();
+const response = await $axios.get("/api/something"); // Get a response
+const something = await $axios.$get("/api/something/"); // Get data directly
 ```
 
-If you want to see it running you 
-can click on this [link](https://codesandbox.io/p/sandbox/modelw-axios-nuxt3-rhbvek?file=%2Fpages%2Findex.vue).
+## As a classic plugin
+
+```typescript
+export default defineNuxtComponent({
+  async asyncData({$axios}) {
+    const something = await $axios.$get("/api/something/");
+    return {something};
+  },
+});
+```

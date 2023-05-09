@@ -8,8 +8,8 @@ This Nuxt 3 module is a superset of method to extended the way axios work, addin
    :caption: Contents:
 
    installation
-   methods
    usage
+   methods
    contributing
 
 
