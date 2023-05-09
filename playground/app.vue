@@ -9,20 +9,25 @@
 </template>
 
 <script lang="ts">
-  import {defineNuxtComponent, useRuntimeConfig} from "#app";
-  export default defineNuxtComponent({
-    async asyncData({ $axios }) {
-      const config = useRuntimeConfig();
-      const url = [config.apiUrl, '/ModelW/.github/main/profile/README.md'].join("")
-      const readme = await $axios.$get(url)
-      return { readme, url }
-    },
+import { defineNuxtComponent, useRuntimeConfig } from "#app";
+import { useAxios } from "#imports";
 
-    data() {
-      return {
-        readme: '',
-        url: '',
-      }
-    }
-  })
+export default defineNuxtComponent({
+  async asyncData() {
+    const { $axios } = useAxios();
+    const config = useRuntimeConfig();
+    const url = [config.apiUrl, "/ModelW/.github/main/profile/README.md"].join(
+      ""
+    );
+    const readme = await $axios.$get(url);
+    return { readme, url };
+  },
+
+  data() {
+    return {
+      readme: "",
+      url: "",
+    };
+  },
+});
 </script>
