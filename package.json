@@ -1,58 +1,22 @@
 {
   "name": "@model-w/axios",
-  "description": "An axios plug-in that enables Vue3/Nuxt3 and Wagtail work together.",
-  "version": "0.4.4",
-  "author": "Rémy Sanchez (@xowap)",
-  "license": "WTFPL",
+  "version": "1.0.2",
   "type": "module",
+  "description": "An axios plug-in that enables Vue3/Nuxt3 and Wagtail work together.",
+  "license": "WTFPL",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ModelW/axios-ts.git"
   },
-  "engines": {
-    "node": ">= 16.0.0"
-  },
-  "exports": {
-    ".": {
-      "types": "./dist/types.d.ts",
-      "import": "./dist/module.mjs",
-      "require": "./dist/module.cjs"
-    }
-  },
   "homepage": "https://model-w-axios.readthedocs.io/en/latest/",
+  "bugs": {
+    "url": "https://github.com/ModelW/axios-ts/issues"
+  },
+  "author": "Rémy Sanchez (@xowap)",
   "contributors": [
     "Laurent Treguier",
     "Ivan Lorenzo"
   ],
-  "bugs": {
-    "url": "https://github.com/ModelW/axios-ts/issues"
-  },
-  "main": "./dist/module.cjs",
-  "types": "./dist/types.d.ts",
-  "scripts": {
-    "prepack": "nuxt-module-build",
-    "dev": "nuxi dev playground",
-    "dev:build": "nuxi build playground",
-    "dev:prepare": "nuxt-module-build --stub && nuxi prepare playground",
-    "release": "npm run lint && npm run test && npm run prepack && changelogen --release && npm publish && git push --follow-tags",
-    "lint": "eslint .",
-    "test": "vitest run",
-    "test:watch": "vitest watch"
-  },
-  "dependencies": {
-    "@nuxt/kit": "^3.4.1",
-    "axios": "^1.3.5"
-  },
-  "devDependencies": {
-    "@nuxt/eslint-config": "^0.1.1",
-    "@nuxt/module-builder": "^0.3.0",
-    "@nuxt/schema": "^3.4.1",
-    "@nuxt/test-utils": "^3.4.1",
-    "changelogen": "^0.5.3",
-    "eslint": "^8.38.0",
-    "nuxt": "^3.4.1",
-    "vitest": "^0.30.1"
-  },
   "keywords": [
     "axios",
     "nuxt3",
@@ -60,7 +24,43 @@
     "model-w",
     "modelw"
   ],
+  "exports": {
+    ".": {
+      "types": "./dist/types.d.ts",
+      "import": "./dist/module.mjs",
+      "require": "./dist/module.cjs"
+    }
+  },
+  "main": "./dist/module.cjs",
+  "types": "./dist/types.d.ts",
   "files": [
-    "./dist"
-  ]
+    "dist"
+  ],
+  "scripts": {
+    "prepack": "nuxt-module-build",
+    "dev": "nuxi dev playground",
+    "dev:build": "nuxi build playground",
+    "dev:prepare": "nuxt-module-build --stub && nuxi prepare playground",
+    "release": "make release",
+    "lint": "eslint .",
+    "test": "vitest run",
+    "test:watch": "vitest watch"
+  },
+  "engines": {
+    "node": ">=16.0.0"
+  },
+  "dependencies": {
+    "@nuxt/kit": "^3.4.3",
+    "axios": "^1.4.0"
+  },
+  "devDependencies": {
+    "@nuxt/eslint-config": "^0.1.1",
+    "@nuxt/module-builder": "^0.3.1",
+    "@nuxt/schema": "^3.4.3",
+    "@nuxt/test-utils": "^3.4.3",
+    "changelogen": "^0.5.3",
+    "eslint": "^8.39.0",
+    "nuxt": "^3.4.3",
+    "vitest": "^0.30.1"
+  }
 }

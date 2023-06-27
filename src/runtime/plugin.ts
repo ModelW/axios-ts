@@ -2,7 +2,7 @@ import { defineNuxtPlugin } from "#app";
 import { useRuntimeConfig } from "#imports";
 import axios, { AxiosRequestConfig, AxiosResponse, AxiosStatic } from "axios";
 
-interface SuperAxiosStatic extends AxiosStatic {
+export interface SuperAxiosStatic extends AxiosStatic {
   /**
    * @param url
    * @param config
@@ -98,7 +98,7 @@ function superAxiosInstance(config: any) {
     baseURL: config.apiUrl ?? config.public.baseUrl,
     withCredentials: true,
     xsrfCookieName: "csrftoken",
-    xsrfHeaderName: "x-csrf-token",
+    xsrfHeaderName: "x-csrftoken",
   });
 
   const superAxios = new Proxy(normalAxios, {
@@ -140,3 +140,7 @@ export default defineNuxtPlugin(() => {
     },
   };
 });
+
+export interface NuxtApp {
+  $axios: SuperAxiosStatic;
+}
