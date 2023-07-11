@@ -1,31 +1,26 @@
 <template>
-  <code>URL = {{ url }}</code>
-
-  <h1>The README</h1>
+  <h1>Example ({{ url }})</h1>
 
   <pre>
-    {{ readme }}
+    {{ example }}
   </pre>
 </template>
 
 <script lang="ts">
-import { defineNuxtComponent, useRuntimeConfig } from "#app";
+import { defineNuxtComponent } from "#app";
 import { useAxios } from "#imports";
 
 export default defineNuxtComponent({
   async asyncData() {
     const { $axios } = useAxios();
-    const config = useRuntimeConfig();
-    const url = [config.apiUrl, "/ModelW/.github/main/profile/README.md"].join(
-      ""
-    );
-    const readme = await $axios.$get(url);
-    return { readme, url };
+    const url = "https://example.org";
+    const example = await $axios.$get(url);
+    return { example, url };
   },
 
   data() {
     return {
-      readme: "",
+      example: "",
       url: "",
     };
   },
