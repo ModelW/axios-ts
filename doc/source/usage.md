@@ -11,7 +11,7 @@ The recommended way of using this module is to use the provided composable:
 ```typescript
 import {useAxios} from "@modelw/axios";
 
-const $axios = useAxios();
+const {$axios} = useAxios();
 const response = await $axios.get("/api/something"); // Get a response
 const something = await $axios.$get("/api/something/"); // Get data directly
 ```
