@@ -1,4 +1,4 @@
-import { useRuntimeConfig } from "#imports";
+import { useRuntimeConfig, useRequestHeaders } from "#imports";
 import axios, { AxiosRequestConfig, AxiosResponse, AxiosStatic } from "axios";
 
 export interface SuperAxiosStatic extends AxiosStatic {
@@ -92,9 +92,17 @@ function isAxiosMethod<R, D>(
   return typeof prop === "function" && axiosMethodNames.includes(name);
 }
 
-function superAxiosInstance(config: any) {
+function superAxiosInstance() {
+  const config = useRuntimeConfig();
   const normalAxios = axios.create({
     baseURL: config.apiUrl ?? config.public.baseUrl,
+    headers: useRequestHeaders([
+      "cookie",
+      "accept-encoding",
+      "accept-language",
+      "accept",
+      "user-agent",
+    ]),
     withCredentials: true,
     xsrfCookieName: "csrftoken",
     xsrfHeaderName: "x-csrftoken",
@@ -131,6 +139,5 @@ function superAxiosInstance(config: any) {
 }
 
 export function useAxios() {
-  const config = useRuntimeConfig();
-  return { $axios: superAxiosInstance(config) };
+  return { $axios: superAxiosInstance() };
 }
